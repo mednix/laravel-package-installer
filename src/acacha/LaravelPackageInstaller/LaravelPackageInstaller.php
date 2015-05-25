@@ -9,11 +9,22 @@
 
 namespace Acacha\LaravelPackageInstaller;
 
-use Composer\Package\PackageInterface;
 use Composer\Installer\LibraryInstaller;
+use Composer\Package\PackageInterface;
+use Composer\Repository\InstalledRepositoryInterface;
+
 
 class LaravelPackageInstaller extends LibraryInstaller
 {
+
+    /**
+     * {@inheritDoc}
+     */
+    public function install(InstalledRepositoryInterface $repo, PackageInterface $package)
+    {
+        $this->io->write('Installing Laravel Package ###########');
+
+    }
 
     /**
      * {@inheritDoc}
