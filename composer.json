@@ -1,0 +1,14 @@
+{
+  "name": "acacha/laravel-package-installer",
+  "type": "composer-plugin",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {"Acacha\\LaravelPackageInstaller\\": "src/"}
+  },
+  "extra": {
+    "class": "Acacha\\LaravelPackageInstaller\\LaravelPackageInstallerPlugin"
+  },
+  "require": {
+    "composer-plugin-api": "1.0.0"
+  }
+}
