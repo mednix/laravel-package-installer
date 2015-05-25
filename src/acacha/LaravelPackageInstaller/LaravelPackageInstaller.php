@@ -1,4 +1,7 @@
 <?php
+
+namespace Acacha\LaravelPackageInstaller;
+
 /**
  * Created by Sergi Tur Badenas @2015
  * http://acacha.org/sergitur
@@ -7,7 +10,7 @@
  * Time: 16:59
  */
 
-namespace Acacha\LaravelPackageInstaller;
+
 
 use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
