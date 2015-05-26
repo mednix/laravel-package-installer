@@ -10,12 +10,6 @@ use Acacha\LaravelUtils\ConfigUpdater;
 class ComposerLaravelPackageInstaller extends LibraryInstaller
 {
 
-    public function __construct()
-    {
-        parent::construct();
-    }
-
-
     /**
      * {@inheritDoc}
      */
