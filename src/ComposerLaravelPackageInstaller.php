@@ -9,22 +9,10 @@ use Acacha\LaravelUtils\ConfigUpdater;
 
 class ComposerLaravelPackageInstaller extends LibraryInstaller
 {
-    /**
-     * Object that patches configs.
-     *
-     * @var ConfigUpdater
-     */
-    private $config;
-
-    /**
-     * @param Client           $packagist
-     * @param SpecialsResolver $resolver
-     * @param ConfigUpdater    $config
-     */
 
     public function __construct()
     {
-        //$this->config = $config;
+        parent::construct();
     }
 
 
