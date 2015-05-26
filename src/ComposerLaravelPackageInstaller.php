@@ -1,34 +1,19 @@
 <?php
-
-namespace Acacha\LaravelPackageInstaller;
-
-/**
- * Created by Sergi Tur Badenas @2015
- * http://acacha.org/sergitur
- * http://acacha.org
- * Date: 25/05/15
- * Time: 16:59
- */
-
-
+namespace acacha\composer\laravelpackageinstaller;
 
 use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
 use Composer\Repository\InstalledRepositoryInterface;
 
-
-class LaravelPackageInstaller extends LibraryInstaller
+class ComposerLaravelPackageInstaller extends LibraryInstaller
 {
-
     /**
      * {@inheritDoc}
      */
     public function install(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
         $this->io->write('Installing Laravel Package ###########');
-
     }
-
     /**
      * {@inheritDoc}
      */

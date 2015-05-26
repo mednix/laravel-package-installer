@@ -1,14 +1,27 @@
 {
-  "name": "acacha/laravel-package-installer",
-  "type": "composer-plugin",
-  "license": "MIT",
-  "autoload": {
-    "psr-4": {"Acacha\\LaravelPackageInstaller\\": "src/"}
+  "keywords" : [
+    "composer",
+    "laravel",
+    "package",
+    "installer"
+  ],
+  "autoload" : {
+    "psr-4" : {
+      "acacha\\composer\\laravelpackageinstaller\\" : "src"
+    }
   },
-  "extra": {
-    "class": "Acacha\\LaravelPackageInstaller\\LaravelPackageInstallerPlugin"
+  "name" : "acacha/laravel-package-installer",
+  "type" : "composer-plugin",
+  "description" : "Composer Plugin for automation of laravel 5 packages",
+  "license" : "MIT",
+  "require" : {
+    "php" : ">=5.3",
+    "composer-plugin-api" : "1.0.0"
   },
-  "require": {
-    "composer-plugin-api": "1.0.0"
+  "require-dev" : {
+    "composer/composer" : "master-dev"
+  },
+  "extra" : {
+    "class" : "\\acacha\\composer\\laravelpackageinstaller\\ComposerLaravelPackageInstallerPlugin"
   }
 }
