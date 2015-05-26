@@ -24,7 +24,7 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
 
     public function __construct()
     {
-        $this->config = $config;
+        //$this->config = $config;
     }
 
 
