@@ -13,8 +13,10 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
      */
     public function install(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
+        $this->io->write('Executing parent install method:');
         //Install package as default
         parent::install($repo,$package);
+        $this->io->write('End Executing parent install method.');
 
         //Init custom install steps
         $extra = $package->getExtra();
@@ -49,6 +51,22 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
 
         $this->io->write('Installing Laravel Package ###########');
     }
+
+
+    /**
+     * {@inheritDoc}
+     */
+    public function update(InstalledRepositoryInterface $repo, PackageInterface $initial, PackageInterface $target)
+    {
+        $this->io->write('Executing parent update method:');
+        //Install package as default
+        parent::update($repo,$initial,$target);
+        $this->io->write('End Executing parent update method.');
+
+        $this->io->write('Update Laravel Package ###########');
+    }
+
+
     /**
      * {@inheritDoc}
      */
