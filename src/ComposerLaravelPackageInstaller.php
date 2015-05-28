@@ -61,7 +61,10 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
             $laravel_aliases = $extra['laravel-aliases'];
             $this->io->write('extra laravel-aliases exists');
             if (is_array($laravel_aliases)) {
-                $this->io->write('laravel-providers is array');
+                $this->io->write('laravel-aliases is array');
+                foreach($laravel_aliases as $alias){
+                    $this->io->write('Alias: ' . $alias);
+                }
             }
             if (is_string($laravel_aliases)) {
                 $this->io->write('laravel-providers is string');
