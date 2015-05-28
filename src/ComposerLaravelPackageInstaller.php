@@ -5,8 +5,6 @@ use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
 use Composer\Repository\InstalledRepositoryInterface;
 
-use Acacha\LaravelUtils\ConfigUpdater;
-
 class ComposerLaravelPackageInstaller extends LibraryInstaller
 {
 
@@ -19,7 +17,7 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
 
 
 
-        
+
 
         //$this->io->write('extra: ' + var_export($extra));
 
