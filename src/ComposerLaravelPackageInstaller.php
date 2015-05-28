@@ -17,6 +17,8 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
     {
         $extra = $package->getExtra();
 
+        $this->io->write('extra: ' . $extra);
+
         if (!empty($extra['laravel-providers'])) {
             // Add laravel providers to config/app.php providers vector
             $laravel_providers = $extra['laravel-providers'];
