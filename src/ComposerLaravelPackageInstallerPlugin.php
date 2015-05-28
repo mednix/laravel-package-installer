@@ -6,7 +6,7 @@ use Composer\Composer;
 class ComposerLaravelPackageInstallerPlugin implements PluginInterface {
 
     public function activate(Composer $composer, IOInterface $io) {
-        $io->write('Activating ComposerLaravelPackageInstallerPlugin ###########');
+        $io->write('111 Activating ComposerLaravelPackageInstallerPlugin ###########');
         $installer = new ComposerLaravelPackageInstaller($io, $composer);
         $composer->getInstallationManager()->addInstaller($installer);
     }

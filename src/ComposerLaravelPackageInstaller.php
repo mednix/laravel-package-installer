@@ -13,6 +13,10 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
      */
     public function install(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
+        //Install package as default
+        parent::install($repo,$package);
+
+        //Init custom install steps
         $extra = $package->getExtra();
 
         $this->io->write('extra: ' . var_export($extra));
