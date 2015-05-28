@@ -21,6 +21,14 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
         //Init custom install steps
         $extra = $package->getExtra();
 
+        $this->io->write('Name: ' + $package->getName());
+        $this->io->write('Pretty Name: ' + $package->getPrettyName());
+
+        $this->io->write('Packages: ');
+        foreach($repo->getPackages() as $package1){
+            $this->io->write('Pretty Name: ' + $package1->getPrettyName());
+        }
+
         $this->io->write('extra: ' . var_export($extra));
 
         if (!empty($extra['laravel-providers'])) {
