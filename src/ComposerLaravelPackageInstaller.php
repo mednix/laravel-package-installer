@@ -58,7 +58,14 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
 
         if (!empty($extra['laravel-aliases'])) {
             // Add laravel providers to config/app.php aliases vector
+            $laravel_aliases = $extra['laravel-aliases'];
             $this->io->write('extra laravel-aliases exists');
+            if (is_array($laravel_aliases)) {
+                $this->io->write('laravel-providers is array');
+            }
+            if (is_string($laravel_aliases)) {
+                $this->io->write('laravel-providers is string');
+            }
 
         } else {
             //Install all package aliases <-- TODO: Reflection?
