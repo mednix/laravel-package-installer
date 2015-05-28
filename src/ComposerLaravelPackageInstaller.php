@@ -17,6 +17,10 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
     {
         $extra = $package->getExtra();
 
+
+
+        
+
         //$this->io->write('extra: ' + var_export($extra));
 
         if (!empty($extra['laravel-providers'])) {
