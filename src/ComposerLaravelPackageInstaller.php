@@ -28,7 +28,9 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
 
         $this->io->write('Packages: ');
         foreach($repo->getPackages() as $package1){
-            $this->io->write('Pretty Name: ' . $package1->getPrettyName());
+            $this->io->write('#### Pretty Name: ' . $package1->getPrettyName());
+            $thisExtra = $package1->getExtra();
+            $this->io->write('extra for ' . $package1->getPrettyName() . ' : ' . var_export($extra));
         }
 
         $this->io->write('extra: ' . var_export($extra));
