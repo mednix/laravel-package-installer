@@ -58,7 +58,7 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
      */
     public function update(InstalledRepositoryInterface $repo, PackageInterface $initial, PackageInterface $target)
     {
-        $this->io->write('################ Executing parent UPDATEEEEEEEE method:');
+        $this->io->write('NEW VERSION !################ Executing parent UPDATEEEEEEEE method:');
         //Install package as default
         parent::update($repo,$initial,$target);
         $this->io->write('End Executing parent UPDATEEEEEEEE method.');
