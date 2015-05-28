@@ -26,18 +26,18 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
         $this->io->write('Name: ' . $package->getName());
         $this->io->write('Pretty Name: ' . $package->getPrettyName());
 
-        $this->io->write('Packages: ');
+        /*$this->io->write('Packages: ');
         foreach($repo->getPackages() as $package1){
             $this->io->write('#### Pretty Name: ' . $package1->getPrettyName());
             $thisExtra = $package1->getExtra();
             $this->io->write('extra for ' . $package1->getPrettyName() . ' : ' . var_export($extra));
-        }
+        }*/
 
         $this->io->write('extra: ' . var_export($extra));
 
-        foreach($extra as $extra_value){
+        /*foreach($extra as $extra_value){
             $this->io->write('Extra value: ' . $extra_value);
-        }
+        }*/
 
         if (!empty($extra['laravel-providers'])) {
             // Add laravel providers to config/app.php providers vector
