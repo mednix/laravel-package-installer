@@ -18,6 +18,8 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
         parent::install($repo,$package);
         $this->io->write('End Executing parent install method.');
 
+        $this->io->write('Package: ' . var_export($package));
+
         //Init custom install steps
         $extra = $package->getExtra();
 
@@ -30,6 +32,10 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
         }
 
         $this->io->write('extra: ' . var_export($extra));
+
+        foreach($extra as $extra_value){
+            $this->io->write('Extra value: ' . $extra_value);
+        }
 
         if (!empty($extra['laravel-providers'])) {
             // Add laravel providers to config/app.php providers vector
