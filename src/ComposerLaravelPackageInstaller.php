@@ -31,7 +31,9 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
     {
         parent::__construct($io,$composer,$type, $filesystem);
 
-        $this->config = new ConfigUpdater(new IlluminateFilesystem, __DIR__);
+        $this->configFile = $this->$basePath . '/config/app.php';
+        File does not exist at path /config/app.php
+        $this->config = new ConfigUpdater(new IlluminateFilesystem, __DIR__ . "../../../..");
     }
 
 

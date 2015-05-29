@@ -55,6 +55,7 @@ class ConfigUpdater
         $this->file = $filesystem;
         $this->$basePath = $basePath;
         $this->configFile = $this->$basePath . '/config/app.php';
+
     }
 
     /**
