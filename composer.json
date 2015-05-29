@@ -7,8 +7,8 @@
   ],
   "autoload" : {
     "files": [
-      "src/Illuminate/Foundation/helpers.php",
-      "src/Illuminate/Support/helpers.php"
+      "vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
+      "vendor/laravel/framework/src/Illuminate/Support/helpers.php "
     ],
     "psr-4" : {
       "acacha\\composer\\laravelpackageinstaller\\" : "src"
