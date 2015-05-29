@@ -11,6 +11,9 @@ use Composer\Util\Filesystem as ComposerFilesystem;
 
 use Illuminate\Filesystem\Filesystem as IlluminateFilesystem;
 
+require "Illuminate/Foundation/helpers.php";
+require "Illuminate/Support/helpers.php";
+
 /**
  * Class ComposerLaravelPackageInstaller
  * @package acacha\composer\laravelpackageinstaller
