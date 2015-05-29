@@ -1,12 +1,39 @@
 <?php
 namespace acacha\composer\laravelpackageinstaller;
 
+use Composer\Composer;
+use Composer\IO\IOInterface;
+
 use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
 use Composer\Repository\InstalledRepositoryInterface;
+use Composer\Util\Filesystem as ComposerFilesystem;
 
+use Illuminate\Filesystem\Filesystem as IlluminateFilesystem;
+
+/**
+ * Class ComposerLaravelPackageInstaller
+ * @package acacha\composer\laravelpackageinstaller
+ */
 class ComposerLaravelPackageInstaller extends LibraryInstaller
 {
+
+    /**
+     * @var ConfigUpdater
+     */
+    private $config;
+
+
+    /**
+     * {@inheritDoc}
+     */
+    public function __construct(IOInterface $io, Composer $composer, $type = 'library', ComposerFilesystem $filesystem = null)
+    {
+        parent::__construct($io,$composer,$type, $filesystem);
+
+        $this->config = new ConfigUpdater(new IlluminateFilesystem, __DIR__);
+    }
+
 
     /**
      * {@inheritDoc}
@@ -47,9 +74,13 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
 
             if (is_array($laravel_providers)) {
                 $this->io->write('laravel-providers is array');
-            }
-            if (is_string($laravel_providers)) {
+                foreach($laravel_providers as $provider){
+                    $this->io->write('Provider: ' . $provider);
+                    $this->config->addProvider($provider);
+                }
+            } elseif (is_string($laravel_providers)) {
                 $this->io->write('laravel-providers is string');
+                $this->config->addProvider($laravel_providers);
             }
         } else {
             //Install all package providers <-- TODO: Reflection?
@@ -64,10 +95,12 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
                 $this->io->write('laravel-aliases is array');
                 foreach($laravel_aliases as $alias){
                     $this->io->write('Alias: ' . $alias);
+                    $this->config->addAlias(class_basename($alias), $alias);
                 }
             }
             if (is_string($laravel_aliases)) {
                 $this->io->write('laravel-providers is string');
+                $this->config->addAlias(class_basename($laravel_aliases), $laravel_aliases);
             }
 
         } else {
