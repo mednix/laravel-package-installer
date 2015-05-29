@@ -5,15 +5,6 @@
     "package",
     "installer"
   ],
-  "autoload" : {
-    "files": [
-      "vendor/laravel/framework/src/Illuminate/Foundation/helpers.php",
-      "vendor/laravel/framework/src/Illuminate/Support/helpers.php"
-    ],
-    "psr-4" : {
-      "acacha\\composer\\laravelpackageinstaller\\" : "src"
-    }
-  },
   "name" : "acacha/laravel-package-installer",
   "type" : "composer-plugin",
   "description" : "Composer Plugin for automation of laravel 5 packages",
@@ -28,5 +19,10 @@
   },
   "extra" : {
     "class" : "\\acacha\\composer\\laravelpackageinstaller\\ComposerLaravelPackageInstallerPlugin"
+  },
+  "autoload" : {
+    "psr-4" : {
+      "acacha\\composer\\laravelpackageinstaller\\" : "src"
+    }
   }
 }
