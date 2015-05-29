@@ -1,8 +1,6 @@
 <?php
 namespace acacha\composer\laravelpackageinstaller;
 
-require __DIR__.'/../../../../vendor/autoload.php';
-
 use Composer\Composer;
 use Composer\IO\IOInterface;
 
