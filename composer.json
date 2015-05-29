@@ -23,6 +23,10 @@
   "autoload" : {
     "psr-4" : {
       "acacha\\composer\\laravelpackageinstaller\\" : "src"
-    }
+    },
+    "files": [
+      "src/Illuminate/Foundation/helpers.php",
+      "src/Illuminate/Support/helpers.php"
+    ]
   }
 }
