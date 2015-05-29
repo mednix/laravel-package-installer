@@ -50,11 +50,11 @@ class ConfigUpdater
      * @param Filesystem $filesystem
      * @param String $basePath
      */
-    public function __construct(Filesystem $filesystem, String $basePath)
+    public function __construct(Filesystem $filesystem, $basePath)
     {
         $this->file = $filesystem;
-        $this->basepath = $basePath;
-        $this->configFile = $this->basepath . '/config/app.php';
+        $this->$basePath = $basePath;
+        $this->configFile = $this->$basePath . '/config/app.php';
     }
 
     /**
