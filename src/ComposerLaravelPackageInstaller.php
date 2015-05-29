@@ -31,7 +31,9 @@ class ComposerLaravelPackageInstaller extends LibraryInstaller
     {
         parent::__construct($io,$composer,$type, $filesystem);
 
-        $this->config = new ConfigUpdater(new IlluminateFilesystem, __DIR__ . "../../../..");
+        $this->io->write('__DIR__ : ' . __DIR__ );
+
+        $this->config = new ConfigUpdater(new IlluminateFilesystem, __DIR__ . "/../../../..");
     }
 
 
