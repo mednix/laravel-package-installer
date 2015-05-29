@@ -7,7 +7,8 @@
   ],
   "autoload" : {
     "files": [
-      "vendor/illuminate/support/helpers.php"
+      "src/Illuminate/Foundation/helpers.php",
+      "src/Illuminate/Support/helpers.php"
     ],
     "psr-4" : {
       "acacha\\composer\\laravelpackageinstaller\\" : "src"
@@ -20,8 +21,7 @@
   "require" : {
     "php" : ">=5.3",
     "composer-plugin-api" : "1.0.0",
-    "illuminate/filesystem": "5.*",
-    "illuminate/support": "5.*"
+    "laravel/framework": "5.*"
   },
   "require-dev" : {
     "composer/composer" : "master-dev"
